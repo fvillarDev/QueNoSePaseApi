@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+
+    $.ajax({
+        url: 'http://www.cuandollega.net/Paginas/Paginas/Recorridos.aspx/RecuperarRecorrido',
+        type: 'POST',
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'jsonp',
+        data: JSON.stringify({ codigoLineaGrupo: '1145' }),
+        success: function (data) {
+            console.log(data);
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+
+</script>
+<div style="max-width: 1200px; overflow: auto; max-height: 900px;">
+    <pre id="code"></pre>
+</div>
+<div id="error"></div>
+
+</body>
+</html>
