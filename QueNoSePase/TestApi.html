@@ -10,10 +10,10 @@
 <script type="text/javascript">
 
     $.ajax({
-        url: 'http://quenosepaseapi.apphb.com/api/Lineas',
-        type: 'POST',
+        url: 'https://quenosepaseapi.apphb.com/api/Lineas',
+        type: 'GET',
         contentType: 'application/json; charset=utf-8',
-        dataType: 'jsonp',
+        dataType: 'json',
         success: function (data) {
             console.log(data);
         },
