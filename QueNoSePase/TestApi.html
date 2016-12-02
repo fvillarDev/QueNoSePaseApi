@@ -10,11 +10,10 @@
 <script type="text/javascript">
 
     $.ajax({
-        url: 'http://www.cuandollega.net/Paginas/Paginas/Recorridos.aspx/RecuperarRecorrido',
+        url: 'http://quenosepaseapi.apphb.com/api/Lineas',
         type: 'POST',
         contentType: 'application/json; charset=utf-8',
         dataType: 'jsonp',
-        data: JSON.stringify({ codigoLineaGrupo: '1145' }),
         success: function (data) {
             console.log(data);
         },
