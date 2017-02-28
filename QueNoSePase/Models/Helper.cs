@@ -209,13 +209,18 @@ namespace QueNoSePase.API.Models
                     return null;//JsonConvert.SerializeObject("Error. No se encontro una linea para el codigo ingresado");
 
                 var calles = ParseCallesAspx(GetCallesAspx(lineaObj.Codigo));
-                var splCalle = calle_EntreCalle.Split(new[] { " Y " }, StringSplitOptions.None);
-                var calleObj = calles.Find(item => item.Nombre == splCalle[0]);
+
+                int index = calle_EntreCalle.IndexOf(" Y ");
+                string first = calle_EntreCalle.Substring(0, index);
+                string second = calle_EntreCalle.Substring(index + 3);
+
+                //var splCalle = calle_EntreCalle.Split(new[] { ' Y ' }, 2);
+                var calleObj = calles.Find(item => item.Nombre == first);
                 if (calleObj == null)
                     return null;
 
                 var intersecciones = ParseInterseccionAspx(GetInterseccionesAspx(lineaObj.Codigo, calleObj.Codigo));
-                var interObj = intersecciones.Find(item => item.Nombre == splCalle[1]);
+                var interObj = intersecciones.Find(item => item.Nombre == second);
                 if (interObj == null)
                     return null;
 
