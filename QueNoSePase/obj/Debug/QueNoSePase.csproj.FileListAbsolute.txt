@@ -56,3 +56,5 @@ D:\FACU\Proyectos\QueNoSePase\QueNoSePase\bin\QueNoSePase.API.dll
 D:\FACU\Proyectos\QueNoSePase\QueNoSePase\bin\QueNoSePase.API.pdb
 D:\FACU\Proyectos\QueNoSePase\QueNoSePase\obj\Debug\QueNoSePase.API.dll
 D:\FACU\Proyectos\QueNoSePase\QueNoSePase\obj\Debug\QueNoSePase.API.pdb
+D:\FACU\Proyectos\QueNoSePase\QueNoSePase\bin\log4net.dll
+D:\FACU\Proyectos\QueNoSePase\QueNoSePase\bin\log4net.xml

@@ -238,6 +238,16 @@ namespace QueNoSePase.API.Models
         }
 
         #endregion
+
+        #region Horarios
+
+        //public static List<Horario> GetHorarioPorParadaLinea(string parada, string linea)
+        //{
+
+        //}
+
+        #endregion
+
         internal class UrlShortener
         {
             private const string Apikey = "AIzaSyDVR1ojllzrQlJ-YuVXWrR19Sl_1y7n6Oc";

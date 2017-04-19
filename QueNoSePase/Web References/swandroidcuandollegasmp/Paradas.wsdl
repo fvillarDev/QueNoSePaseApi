@@ -1,0 +1,1022 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarLocalidadesPorEntidad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codEntidad" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarLocalidadesPorEntidadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarLocalidadesPorEntidadResult" type="tns:ArrayOfLocalidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLocalidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Localidad" nillable="true" type="tns:Localidad" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Localidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="localidadGoogle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="provinciaGoogle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="paisGoogle" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserDetails" type="tns:UserDetails" />
+      <s:complexType name="UserDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="RecuperarLineaPorLocalidad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="localidad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="provincia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pais" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarLineaPorLocalidadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarLineaPorLocalidadResult" type="tns:ArrayOfTresPropiedades" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTresPropiedades">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TresPropiedades" nillable="true" type="tns:TresPropiedades" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TresPropiedades">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="descripcionA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcionB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcionC" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecuperarLineaPorEntidad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoEntidad" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarLineaPorEntidadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarLineaPorEntidadResult" type="tns:ArrayOfSimple" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSimple">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Simple" nillable="true" type="tns:Simple" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Simple">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecuperarLineasPorCodigoEmpresa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoEmpresa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarLineasPorCodigoEmpresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarLineasPorCodigoEmpresaResult" type="tns:ArrayOfSimple" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarLineaPorCuandoLlega">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCuandoLlega" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarLineaPorCuandoLlegaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarLineaPorCuandoLlegaResult" type="tns:ArrayOfTresPropiedades" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarCallesPrincipalPorLinea">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codLinea" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarCallesPrincipalPorLineaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarCallesPrincipalPorLineaResult" type="tns:ArrayOfSimple" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarInterseccionPorLineaYCalle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codLinea" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codCalle" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarInterseccionPorLineaYCalleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarInterseccionPorLineaYCalleResult" type="tns:ArrayOfSimple" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarParadasPorCalleEInterseccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codCalle" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codInterseccion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarParadasPorCalleEInterseccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarParadasPorCalleEInterseccionResult" type="tns:ArrayOfParada" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfParada">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Parada" nillable="true" type="tns:Parada" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Parada">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="identificador" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecuperarParadasPorLineaCalleEInterseccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codLinea" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codCalle" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codInterseccion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarParadasPorLineaCalleEInterseccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarParadasPorLineaCalleEInterseccionResult" type="tns:ArrayOfParada" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarParadasConBanderaPorLineaCalleEInterseccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codLinea" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codCalle" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codInterseccion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarParadasConBanderaPorLineaCalleEInterseccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarParadasConBanderaPorLineaCalleEInterseccionResult" type="tns:ArrayOfParadaConBandera" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfParadaConBandera">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ParadaConBandera" nillable="true" type="tns:ParadaConBandera" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ParadaConBandera">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="identificador" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="abreviaturaBandera" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="abreviaturaAmpliadaBandera" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecuperarProximosArribos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="identificadorParada" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoLineaParada" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoAplicacion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoEntidad" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="localidad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarProximosArribosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarProximosArribosResult" type="tns:ArrayOfProximoArribo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProximoArribo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProximoArribo" nillable="true" type="tns:ProximoArribo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProximoArribo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="linea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bandera" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="arribo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="latitud" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="longitud" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="latitudParada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="longitudParada" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecuperarParadasPorLineaParaCuandoLlega">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codLinea" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarParadasPorLineaParaCuandoLlegaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarParadasPorLineaParaCuandoLlegaResult" type="tns:ArrayOfParadaCompleta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfParadaCompleta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ParadaCompleta" nillable="true" type="tns:ParadaCompleta" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ParadaCompleta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="identificador" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sentido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="callePrincipal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="calleSecundaria" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="latitud" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="longitud" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecuperarProximosArribosCLCompleto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="identificadorParada" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoLineaParada" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoAplicacion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoEntidad" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="localidad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarProximosArribosCLCompletoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarProximosArribosCLCompletoResult" type="tns:ArrayOfProximoArriboCLCompleto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProximoArriboCLCompleto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProximoArriboCLCompleto" nillable="true" type="tns:ProximoArriboCLCompleto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProximoArriboCLCompleto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="linea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="abreviaturaBandera" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="abreviaturaAmpliadaBandera" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="arribo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="esAdaptado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="latitud" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="longitud" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="latitudParada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="longitudParada" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecuperarProximosArribosSMP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="identificadorParada" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoLineaParadas" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoAplicacion" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="localidad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarProximosArribosSMPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarProximosArribosSMPResult" type="tns:ArrayOfProximoArriboSMP" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProximoArriboSMP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProximoArriboSMP" nillable="true" type="tns:ProximoArriboSMP" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProximoArriboSMP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="linea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="abreviaturaBandera" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bandera" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="arribo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="latitud" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="longitud" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="latitudParada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="longitudParada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="identificadorCoche" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="identificadorChofer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desvioHorario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ultimaFechaGPS" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecuperarRecorridoParaMapaPorEntidadYLinea">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoEntidad" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoLineaParada" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarRecorridoParaMapaPorEntidadYLineaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarRecorridoParaMapaPorEntidadYLineaResult" type="tns:ArrayOfTresPropiedades" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarRecorridoParaMapaAbrevYAmpliPorEntidadYLinea">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoEntidad" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoLineaParada" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarRecorridoParaMapaAbrevYAmpliPorEntidadYLineaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarRecorridoParaMapaAbrevYAmpliPorEntidadYLineaResult" type="tns:ArrayOfTresPropiedades" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarTodasEmpresasAMigrar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoEntidad" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoLineaParada" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarTodasEmpresasAMigrarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarTodasEmpresasAMigrarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarLocalidadesPorEntidadSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarLocalidadesPorEntidad" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarLocalidadesPorEntidadSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarLocalidadesPorEntidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarLocalidadesPorEntidadUserDetails">
+    <wsdl:part name="UserDetails" element="tns:UserDetails" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarLineaPorLocalidadSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarLineaPorLocalidad" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarLineaPorLocalidadSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarLineaPorLocalidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarLineaPorLocalidadUserDetails">
+    <wsdl:part name="UserDetails" element="tns:UserDetails" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarLineaPorEntidadSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarLineaPorEntidad" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarLineaPorEntidadSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarLineaPorEntidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarLineaPorEntidadUserDetails">
+    <wsdl:part name="UserDetails" element="tns:UserDetails" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarLineasPorCodigoEmpresaSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarLineasPorCodigoEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarLineasPorCodigoEmpresaSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarLineasPorCodigoEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarLineasPorCodigoEmpresaUserDetails">
+    <wsdl:part name="UserDetails" element="tns:UserDetails" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarLineaPorCuandoLlegaSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarLineaPorCuandoLlega" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarLineaPorCuandoLlegaSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarLineaPorCuandoLlegaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarLineaPorCuandoLlegaUserDetails">
+    <wsdl:part name="UserDetails" element="tns:UserDetails" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarCallesPrincipalPorLineaSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarCallesPrincipalPorLinea" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarCallesPrincipalPorLineaSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarCallesPrincipalPorLineaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarCallesPrincipalPorLineaUserDetails">
+    <wsdl:part name="UserDetails" element="tns:UserDetails" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarInterseccionPorLineaYCalleSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarInterseccionPorLineaYCalle" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarInterseccionPorLineaYCalleSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarInterseccionPorLineaYCalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarInterseccionPorLineaYCalleUserDetails">
+    <wsdl:part name="UserDetails" element="tns:UserDetails" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarParadasPorCalleEInterseccionSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarParadasPorCalleEInterseccion" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarParadasPorCalleEInterseccionSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarParadasPorCalleEInterseccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarParadasPorCalleEInterseccionUserDetails">
+    <wsdl:part name="UserDetails" element="tns:UserDetails" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarParadasPorLineaCalleEInterseccionSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarParadasPorLineaCalleEInterseccion" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarParadasPorLineaCalleEInterseccionSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarParadasPorLineaCalleEInterseccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarParadasPorLineaCalleEInterseccionUserDetails">
+    <wsdl:part name="UserDetails" element="tns:UserDetails" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarParadasConBanderaPorLineaCalleEInterseccionSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarParadasConBanderaPorLineaCalleEInterseccion" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarParadasConBanderaPorLineaCalleEInterseccionSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarParadasConBanderaPorLineaCalleEInterseccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarParadasConBanderaPorLineaCalleEInterseccionUserDetails">
+    <wsdl:part name="UserDetails" element="tns:UserDetails" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarProximosArribosSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarProximosArribos" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarProximosArribosSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarProximosArribosResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarProximosArribosUserDetails">
+    <wsdl:part name="UserDetails" element="tns:UserDetails" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarParadasPorLineaParaCuandoLlegaSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarParadasPorLineaParaCuandoLlega" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarParadasPorLineaParaCuandoLlegaSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarParadasPorLineaParaCuandoLlegaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarParadasPorLineaParaCuandoLlegaUserDetails">
+    <wsdl:part name="UserDetails" element="tns:UserDetails" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarProximosArribosCLCompletoSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarProximosArribosCLCompleto" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarProximosArribosCLCompletoSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarProximosArribosCLCompletoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarProximosArribosCLCompletoUserDetails">
+    <wsdl:part name="UserDetails" element="tns:UserDetails" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarProximosArribosSMPSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarProximosArribosSMP" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarProximosArribosSMPSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarProximosArribosSMPResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarProximosArribosSMPUserDetails">
+    <wsdl:part name="UserDetails" element="tns:UserDetails" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarRecorridoParaMapaPorEntidadYLineaSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarRecorridoParaMapaPorEntidadYLinea" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarRecorridoParaMapaPorEntidadYLineaSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarRecorridoParaMapaPorEntidadYLineaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarRecorridoParaMapaPorEntidadYLineaUserDetails">
+    <wsdl:part name="UserDetails" element="tns:UserDetails" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarRecorridoParaMapaAbrevYAmpliPorEntidadYLineaSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarRecorridoParaMapaAbrevYAmpliPorEntidadYLinea" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarRecorridoParaMapaAbrevYAmpliPorEntidadYLineaSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarRecorridoParaMapaAbrevYAmpliPorEntidadYLineaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarRecorridoParaMapaAbrevYAmpliPorEntidadYLineaUserDetails">
+    <wsdl:part name="UserDetails" element="tns:UserDetails" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarTodasEmpresasAMigrarSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarTodasEmpresasAMigrar" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarTodasEmpresasAMigrarSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarTodasEmpresasAMigrarResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarTodasEmpresasAMigrarUserDetails">
+    <wsdl:part name="UserDetails" element="tns:UserDetails" />
+  </wsdl:message>
+  <wsdl:portType name="ParadasSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarLocalidadesPorEntidad">
+      <wsdl:input message="tns:RecuperarLocalidadesPorEntidadSoapIn" />
+      <wsdl:output message="tns:RecuperarLocalidadesPorEntidadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarLineaPorLocalidad">
+      <wsdl:input message="tns:RecuperarLineaPorLocalidadSoapIn" />
+      <wsdl:output message="tns:RecuperarLineaPorLocalidadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarLineaPorEntidad">
+      <wsdl:input message="tns:RecuperarLineaPorEntidadSoapIn" />
+      <wsdl:output message="tns:RecuperarLineaPorEntidadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarLineasPorCodigoEmpresa">
+      <wsdl:input message="tns:RecuperarLineasPorCodigoEmpresaSoapIn" />
+      <wsdl:output message="tns:RecuperarLineasPorCodigoEmpresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarLineaPorCuandoLlega">
+      <wsdl:input message="tns:RecuperarLineaPorCuandoLlegaSoapIn" />
+      <wsdl:output message="tns:RecuperarLineaPorCuandoLlegaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCallesPrincipalPorLinea">
+      <wsdl:input message="tns:RecuperarCallesPrincipalPorLineaSoapIn" />
+      <wsdl:output message="tns:RecuperarCallesPrincipalPorLineaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarInterseccionPorLineaYCalle">
+      <wsdl:input message="tns:RecuperarInterseccionPorLineaYCalleSoapIn" />
+      <wsdl:output message="tns:RecuperarInterseccionPorLineaYCalleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarParadasPorCalleEInterseccion">
+      <wsdl:input message="tns:RecuperarParadasPorCalleEInterseccionSoapIn" />
+      <wsdl:output message="tns:RecuperarParadasPorCalleEInterseccionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarParadasPorLineaCalleEInterseccion">
+      <wsdl:input message="tns:RecuperarParadasPorLineaCalleEInterseccionSoapIn" />
+      <wsdl:output message="tns:RecuperarParadasPorLineaCalleEInterseccionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarParadasConBanderaPorLineaCalleEInterseccion">
+      <wsdl:input message="tns:RecuperarParadasConBanderaPorLineaCalleEInterseccionSoapIn" />
+      <wsdl:output message="tns:RecuperarParadasConBanderaPorLineaCalleEInterseccionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarProximosArribos">
+      <wsdl:input message="tns:RecuperarProximosArribosSoapIn" />
+      <wsdl:output message="tns:RecuperarProximosArribosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarParadasPorLineaParaCuandoLlega">
+      <wsdl:input message="tns:RecuperarParadasPorLineaParaCuandoLlegaSoapIn" />
+      <wsdl:output message="tns:RecuperarParadasPorLineaParaCuandoLlegaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarProximosArribosCLCompleto">
+      <wsdl:input message="tns:RecuperarProximosArribosCLCompletoSoapIn" />
+      <wsdl:output message="tns:RecuperarProximosArribosCLCompletoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarProximosArribosSMP">
+      <wsdl:input message="tns:RecuperarProximosArribosSMPSoapIn" />
+      <wsdl:output message="tns:RecuperarProximosArribosSMPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarRecorridoParaMapaPorEntidadYLinea">
+      <wsdl:input message="tns:RecuperarRecorridoParaMapaPorEntidadYLineaSoapIn" />
+      <wsdl:output message="tns:RecuperarRecorridoParaMapaPorEntidadYLineaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarRecorridoParaMapaAbrevYAmpliPorEntidadYLinea">
+      <wsdl:input message="tns:RecuperarRecorridoParaMapaAbrevYAmpliPorEntidadYLineaSoapIn" />
+      <wsdl:output message="tns:RecuperarRecorridoParaMapaAbrevYAmpliPorEntidadYLineaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarTodasEmpresasAMigrar">
+      <wsdl:input message="tns:RecuperarTodasEmpresasAMigrarSoapIn" />
+      <wsdl:output message="tns:RecuperarTodasEmpresasAMigrarSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ParadasSoap" type="tns:ParadasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarLocalidadesPorEntidad">
+      <soap:operation soapAction="http://tempuri.org/RecuperarLocalidadesPorEntidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarLocalidadesPorEntidadUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarLineaPorLocalidad">
+      <soap:operation soapAction="http://tempuri.org/RecuperarLineaPorLocalidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarLineaPorLocalidadUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarLineaPorEntidad">
+      <soap:operation soapAction="http://tempuri.org/RecuperarLineaPorEntidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarLineaPorEntidadUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarLineasPorCodigoEmpresa">
+      <soap:operation soapAction="http://tempuri.org/RecuperarLineasPorCodigoEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarLineasPorCodigoEmpresaUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarLineaPorCuandoLlega">
+      <soap:operation soapAction="http://tempuri.org/RecuperarLineaPorCuandoLlega" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarLineaPorCuandoLlegaUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCallesPrincipalPorLinea">
+      <soap:operation soapAction="http://tempuri.org/RecuperarCallesPrincipalPorLinea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarCallesPrincipalPorLineaUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarInterseccionPorLineaYCalle">
+      <soap:operation soapAction="http://tempuri.org/RecuperarInterseccionPorLineaYCalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarInterseccionPorLineaYCalleUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarParadasPorCalleEInterseccion">
+      <soap:operation soapAction="http://tempuri.org/RecuperarParadasPorCalleEInterseccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarParadasPorCalleEInterseccionUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarParadasPorLineaCalleEInterseccion">
+      <soap:operation soapAction="http://tempuri.org/RecuperarParadasPorLineaCalleEInterseccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarParadasPorLineaCalleEInterseccionUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarParadasConBanderaPorLineaCalleEInterseccion">
+      <soap:operation soapAction="http://tempuri.org/RecuperarParadasConBanderaPorLineaCalleEInterseccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarParadasConBanderaPorLineaCalleEInterseccionUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarProximosArribos">
+      <soap:operation soapAction="http://tempuri.org/RecuperarProximosArribos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarProximosArribosUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarParadasPorLineaParaCuandoLlega">
+      <soap:operation soapAction="http://tempuri.org/RecuperarParadasPorLineaParaCuandoLlega" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarParadasPorLineaParaCuandoLlegaUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarProximosArribosCLCompleto">
+      <soap:operation soapAction="http://tempuri.org/RecuperarProximosArribosCLCompleto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarProximosArribosCLCompletoUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarProximosArribosSMP">
+      <soap:operation soapAction="http://tempuri.org/RecuperarProximosArribosSMP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarProximosArribosSMPUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarRecorridoParaMapaPorEntidadYLinea">
+      <soap:operation soapAction="http://tempuri.org/RecuperarRecorridoParaMapaPorEntidadYLinea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarRecorridoParaMapaPorEntidadYLineaUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarRecorridoParaMapaAbrevYAmpliPorEntidadYLinea">
+      <soap:operation soapAction="http://tempuri.org/RecuperarRecorridoParaMapaAbrevYAmpliPorEntidadYLinea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarRecorridoParaMapaAbrevYAmpliPorEntidadYLineaUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarTodasEmpresasAMigrar">
+      <soap:operation soapAction="http://tempuri.org/RecuperarTodasEmpresasAMigrar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarTodasEmpresasAMigrarUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ParadasSoap12" type="tns:ParadasSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarLocalidadesPorEntidad">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarLocalidadesPorEntidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarLocalidadesPorEntidadUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarLineaPorLocalidad">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarLineaPorLocalidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarLineaPorLocalidadUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarLineaPorEntidad">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarLineaPorEntidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarLineaPorEntidadUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarLineasPorCodigoEmpresa">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarLineasPorCodigoEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarLineasPorCodigoEmpresaUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarLineaPorCuandoLlega">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarLineaPorCuandoLlega" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarLineaPorCuandoLlegaUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCallesPrincipalPorLinea">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarCallesPrincipalPorLinea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarCallesPrincipalPorLineaUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarInterseccionPorLineaYCalle">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarInterseccionPorLineaYCalle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarInterseccionPorLineaYCalleUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarParadasPorCalleEInterseccion">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarParadasPorCalleEInterseccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarParadasPorCalleEInterseccionUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarParadasPorLineaCalleEInterseccion">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarParadasPorLineaCalleEInterseccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarParadasPorLineaCalleEInterseccionUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarParadasConBanderaPorLineaCalleEInterseccion">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarParadasConBanderaPorLineaCalleEInterseccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarParadasConBanderaPorLineaCalleEInterseccionUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarProximosArribos">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarProximosArribos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarProximosArribosUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarParadasPorLineaParaCuandoLlega">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarParadasPorLineaParaCuandoLlega" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarParadasPorLineaParaCuandoLlegaUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarProximosArribosCLCompleto">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarProximosArribosCLCompleto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarProximosArribosCLCompletoUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarProximosArribosSMP">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarProximosArribosSMP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarProximosArribosSMPUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarRecorridoParaMapaPorEntidadYLinea">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarRecorridoParaMapaPorEntidadYLinea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarRecorridoParaMapaPorEntidadYLineaUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarRecorridoParaMapaAbrevYAmpliPorEntidadYLinea">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarRecorridoParaMapaAbrevYAmpliPorEntidadYLinea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarRecorridoParaMapaAbrevYAmpliPorEntidadYLineaUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarTodasEmpresasAMigrar">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarTodasEmpresasAMigrar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarTodasEmpresasAMigrarUserDetails" part="UserDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Paradas">
+    <wsdl:port name="ParadasSoap" binding="tns:ParadasSoap">
+      <soap:address location="http://swandroidcuandollegasmp01.efibus.com.ar/Paradas.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ParadasSoap12" binding="tns:ParadasSoap12">
+      <soap12:address location="http://swandroidcuandollegasmp01.efibus.com.ar/Paradas.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

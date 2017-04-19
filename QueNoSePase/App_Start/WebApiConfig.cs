@@ -12,6 +12,8 @@ namespace QueNoSePase.API
 
             config.EnableCors();
 
+            log4net.Config.XmlConfigurator.Configure();
+
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
