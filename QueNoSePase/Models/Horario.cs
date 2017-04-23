@@ -15,10 +15,11 @@ namespace QueNoSePase.API.Models
         {
             get
             {
-                var hora = Hora;
-                if (string.IsNullOrEmpty(Hora))
-                    hora = "00";
-                return DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy " + hora + ":00"));
+                return DateTime.Now;
+                //var hora = Hora;
+                //if (string.IsNullOrEmpty(Hora))
+                //    hora = "00";
+                //return DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy " + hora + ":00"));
             }
         }
 
